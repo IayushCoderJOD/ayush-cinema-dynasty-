@@ -13,10 +13,9 @@ interface Movie {
 function App() {
 
   const app_url:string="https://www.omdbapi.com?apikey=ca751b42";
-
   const [searchTerm, setSearchTerm] = useState<string>("iron man");
   const [searchMoviesList, setSearchMoviesList] =useState<Movie[]>([]);
-
+  
   const searchMovies=async (title:string)=>{
     const response=await fetch(`${app_url}&s=${title}`);
     const json=await response.json();
